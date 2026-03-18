@@ -409,6 +409,37 @@
 
     .callout strong { color: var(--accent-light); }
 
+    /* Platform pills */
+    .plat-yes {
+      display: inline-block;
+      background: #052e16;
+      color: #4ade80;
+      padding: 0.15rem 0.5rem;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .plat-no {
+      display: inline-block;
+      background: #1c1c1c;
+      color: #555;
+      padding: 0.15rem 0.5rem;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .opp-badge {
+      display: inline-block;
+      background: #312e81;
+      color: #a5b4fc;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
     /* Tabs */
     .tabs {
       display: flex;
@@ -836,133 +867,115 @@
           <thead>
             <tr>
               <th>Estudio</th>
-              <th>Instagram</th>
               <th>Seguidores</th>
               <th>Disciplina</th>
-              <th>Paquete popular ($/cl)</th>
-              <th>Ummove Peak ($180)</th>
+              <th>Wellhub</th>
+              <th>TotalPass</th>
+              <th>Fitpass</th>
               <th>% del paquete</th>
-              <th>Pitch</th>
+              <th>Oportunidad</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Anatomy</strong></td>
-              <td>@anatomymx</td>
+              <td><strong>Anatomy</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@anatomymx</span></td>
               <td>52K</td>
               <td>Multi</td>
-              <td>10cl = $230</td>
-              <td class="green">$180</td>
-              <td>
-                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:78%;background:var(--yellow)"></div></div><span class="progress-label yellow">78%</span></div>
-              </td>
-              <td><span class="badge badge-b">Social Booking</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:78%;background:var(--yellow)"></div></div><span class="progress-label yellow">78%</span></div></td>
+              <td><span class="opp-badge">SIN AGREGADOR</span></td>
             </tr>
             <tr>
-              <td><strong>BICIO</strong></td>
-              <td>@biciomxstudio</td>
+              <td><strong>BICIO</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@biciomxstudio</span></td>
               <td>42K</td>
               <td>Cycling</td>
-              <td>~$200 est.</td>
-              <td class="green">$180</td>
-              <td>
-                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:90%;background:var(--green)"></div></div><span class="progress-label green">~90%</span></div>
-              </td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:90%;background:var(--green)"></div></div><span class="progress-label green">~90%</span></div></td>
               <td><span class="badge badge-green">Facil</span></td>
             </tr>
             <tr>
-              <td><strong>Zone Fitness</strong></td>
-              <td>@zone.mx</td>
+              <td><strong>Zone Fitness</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@zone.mx</span></td>
               <td>36K</td>
               <td>Cycling</td>
-              <td>10cl = $260 / $190</td>
-              <td class="green">$180</td>
-              <td>
-                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:82%;background:var(--yellow)"></div></div><span class="progress-label yellow">69-95%</span></div>
-              </td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:82%;background:var(--yellow)"></div></div><span class="progress-label yellow">69-95%</span></div></td>
               <td><span class="badge badge-b">Omnia primero</span></td>
             </tr>
             <tr>
-              <td><strong>11:11 Fitness</strong></td>
-              <td>@onceoncefitness</td>
+              <td><strong>11:11 Fitness</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@onceoncefitness</span></td>
               <td>25K</td>
               <td>Multi</td>
-              <td>No publicado</td>
-              <td class="green">$180</td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-no">NO</span></td>
               <td><span style="color:var(--text-muted)">--</span></td>
               <td><span class="badge badge-b">6 sucursales</span></td>
             </tr>
             <tr>
-              <td><strong>Atoms Studio</strong></td>
-              <td>@atomsstudio</td>
+              <td><strong>Atoms Studio</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@atomsstudio</span></td>
               <td>22K</td>
               <td>Pilates</td>
-              <td>8ses = $313</td>
-              <td class="green">$180</td>
-              <td>
-                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:58%;background:var(--red)"></div></div><span class="progress-label red">58%</span></div>
-              </td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:58%;background:var(--red)"></div></div><span class="progress-label red">58%</span></div></td>
               <td><span class="badge badge-red">Solo Valley</span></td>
             </tr>
             <tr>
-              <td><strong>Midline</strong></td>
-              <td>@midlinepilates.mx</td>
+              <td><strong>Midline</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@midlinepilates.mx</span></td>
               <td>18.6K</td>
               <td>Pilates</td>
-              <td>8ses = $193</td>
-              <td class="green">$180</td>
-              <td>
-                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:93%;background:var(--green)"></div></div><span class="progress-label green">93%</span></div>
-              </td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:93%;background:var(--green)"></div></div><span class="progress-label green">93%</span></div></td>
               <td><span class="badge badge-green">Facil</span></td>
             </tr>
             <tr>
-              <td><strong>CF Tigran</strong></td>
-              <td>@crossfittigran</td>
+              <td><strong>CF Tigran</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@crossfittigran</span></td>
               <td>17K</td>
               <td>CrossFit</td>
-              <td>~$165/mes</td>
-              <td class="green">$180</td>
-              <td>
-                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div><span class="progress-label green">109%</span></div>
-              </td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div><span class="progress-label green">109%</span></div></td>
               <td><span class="badge badge-green">Paga MAS</span></td>
             </tr>
             <tr>
-              <td><strong>Spin It</strong></td>
-              <td>@spinitmx</td>
+              <td><strong>Spin It</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@spinitmx</span></td>
               <td>15K</td>
               <td>Cycling</td>
-              <td>10cl = $170</td>
-              <td class="green">$180</td>
-              <td>
-                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div><span class="progress-label green">106%</span></div>
-              </td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div><span class="progress-label green">106%</span></div></td>
               <td><span class="badge badge-green">Paga MAS</span></td>
             </tr>
             <tr>
-              <td><strong>Rollin</strong></td>
-              <td>@rollincyclingstudio</td>
+              <td><strong>Rollin</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@rollincyclingstudio</span></td>
               <td>14K</td>
               <td>Cycling</td>
-              <td>10cl = $175</td>
-              <td class="green">$180</td>
-              <td>
-                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div><span class="progress-label green">103%</span></div>
-              </td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><span class="plat-yes">SI</span></td>
+              <td><div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div><span class="progress-label green">103%</span></div></td>
               <td><span class="badge badge-green">Paga MAS</span></td>
             </tr>
             <tr>
-              <td><strong>Haven</strong></td>
-              <td>@havenstudio.mty</td>
+              <td><strong>Haven</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@havenstudio.mty</span></td>
               <td>12K</td>
               <td>Pilates</td>
-              <td>10cl = $225</td>
-              <td class="green">$180</td>
-              <td>
-                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:80%;background:var(--yellow)"></div></div><span class="progress-label yellow">80%</span></div>
-              </td>
-              <td><span class="badge badge-b">Social Booking</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><span class="plat-no">NO</span></td>
+              <td><div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:80%;background:var(--yellow)"></div></div><span class="progress-label yellow">80%</span></div></td>
+              <td><span class="opp-badge">SIN AGREGADOR</span></td>
             </tr>
           </tbody>
         </table>
@@ -981,21 +994,75 @@
         </div>
         <table>
           <thead>
-            <tr><th>Estudio</th><th>Instagram</th><th>Seguidores</th><th>Disciplina</th><th>Ubicacion</th><th>Precios publicados</th></tr>
+            <tr><th>Estudio</th><th>Seguidores</th><th>Disciplina</th><th>Wellhub</th><th>TotalPass</th><th>Fitpass</th><th>Ubicacion</th><th>Oportunidad</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>V Pilates</strong></td><td>@vpilatesmx</td><td>6K</td><td>Pilates+</td><td>Valle Oriente, San Agustin</td><td>No (Wellhub)</td></tr>
-            <tr><td><strong>ALOT Studio</strong></td><td>@alotstudiomx</td><td>5.9K</td><td>Cycling</td><td>Merida (expansion)</td><td>Si — ilimitado $1,799</td></tr>
-            <tr><td><strong>Evofit</strong></td><td>@evofitgimnasios</td><td>5.5K</td><td>CrossFit/Gym</td><td>Zona Tec</td><td>No</td></tr>
-            <tr><td><strong>CF Tigran Sur</strong></td><td>@crossfittigransur</td><td>4.6K</td><td>CrossFit</td><td>Monterrey Sur</td><td>No</td></tr>
-            <tr><td><strong>Hera Studio</strong></td><td>@herapilatesstudio</td><td>3.6K</td><td>Pilates</td><td>Cumbres</td><td>No (Wellhub)</td></tr>
-            <tr><td><strong>11:11 Contry</strong></td><td>@onceoncecontry</td><td>3.2K</td><td>Multi</td><td>Contry</td><td>No</td></tr>
-            <tr><td><strong>Space Studio</strong></td><td>@spacestudio.mx</td><td>2.9K</td><td>Cycling</td><td>San Jeronimo</td><td>Si — desde $95/cl</td></tr>
-            <tr><td><strong>Beyond Cycling</strong></td><td>@beyondcyclingstudio</td><td>2.7K</td><td>Cycling</td><td>Pueblo Serena</td><td>Web caida</td></tr>
-            <tr><td><strong>OTF Monterrey</strong></td><td>@orangetheorymty</td><td>2.5K</td><td>HIIT</td><td>San Pedro</td><td>Si — desde $1,500/mes</td></tr>
-            <tr><td><strong>D'Asana</strong></td><td>@d_asana_studio</td><td>2.3K</td><td>Bikram</td><td>San Pedro</td><td>No</td></tr>
-            <tr><td><strong>CF Absoluto</strong></td><td>@crossfitabsoluto</td><td>2.3K</td><td>CrossFit</td><td>Mirador</td><td>Prueba $150</td></tr>
-            <tr><td><strong>Love Pilates</strong></td><td>@lovepilatesmty</td><td>2.2K</td><td>Pilates</td><td>2 sucursales</td><td>Si — desde $128/cl</td></tr>
+            <tr>
+              <td><strong>V Pilates</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@vpilatesmx</span></td>
+              <td>6K</td><td>Pilates+</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td>
+              <td>Valle Oriente</td><td><span class="badge badge-b">Solo Wellhub</span></td>
+            </tr>
+            <tr>
+              <td><strong>Evofit</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@evofitgimnasios</span></td>
+              <td>5.5K</td><td>CrossFit/Gym</td>
+              <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td>
+              <td>Zona Tec</td><td><span class="opp-badge">SIN AGREGADOR</span></td>
+            </tr>
+            <tr>
+              <td><strong>CF Tigran Sur</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@crossfittigransur</span></td>
+              <td>4.6K</td><td>CrossFit</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td>
+              <td>Monterrey Sur</td><td><span class="badge badge-b">W+TP</span></td>
+            </tr>
+            <tr>
+              <td><strong>Hera Studio</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@herapilatesstudio</span></td>
+              <td>3.6K</td><td>Pilates</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td>
+              <td>Cumbres</td><td><span class="badge badge-b">W+TP</span></td>
+            </tr>
+            <tr>
+              <td><strong>11:11 Contry</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@onceoncecontry</span></td>
+              <td>3.2K</td><td>Multi</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td>
+              <td>Contry</td><td><span class="badge badge-b">W+TP</span></td>
+            </tr>
+            <tr>
+              <td><strong>Space Studio</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@spacestudio.mx</span></td>
+              <td>2.9K</td><td>Cycling</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td>
+              <td>San Jeronimo</td><td><span class="badge badge-green">Las 3</span></td>
+            </tr>
+            <tr>
+              <td><strong>Beyond Cycling</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@beyondcyclingstudio</span></td>
+              <td>2.7K</td><td>Cycling</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-yes">SI</span></td>
+              <td>Pueblo Serena</td><td><span class="badge badge-b">W+FP</span></td>
+            </tr>
+            <tr>
+              <td><strong>OTF Monterrey</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@orangetheorymty</span></td>
+              <td>2.5K</td><td>HIIT</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td>
+              <td>San Pedro</td><td><span class="badge badge-green">Las 3</span></td>
+            </tr>
+            <tr>
+              <td><strong>D'Asana</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@d_asana_studio</span></td>
+              <td>2.3K</td><td>Bikram</td>
+              <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td>
+              <td>San Pedro</td><td><span class="opp-badge">SIN AGREGADOR</span></td>
+            </tr>
+            <tr>
+              <td><strong>CF Absoluto</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@crossfitabsoluto</span></td>
+              <td>2.3K</td><td>CrossFit</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td>
+              <td>Mirador</td><td><span class="badge badge-green">Las 3</span></td>
+            </tr>
+            <tr>
+              <td><strong>Love Pilates</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@lovepilatesmty</span></td>
+              <td>2.2K</td><td>Pilates</td>
+              <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-yes">SI</span></td>
+              <td>2 sucursales</td><td><span class="badge badge-b">Solo Fitpass</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -1013,17 +1080,57 @@
         </div>
         <table>
           <thead>
-            <tr><th>Estudio</th><th>Instagram</th><th>Seguidores</th><th>Disciplina</th><th>Ubicacion</th></tr>
+            <tr><th>Estudio</th><th>Seguidores</th><th>Disciplina</th><th>Wellhub</th><th>TotalPass</th><th>Fitpass</th><th>Ubicacion</th><th>Oportunidad</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Energym Pilates</strong></td><td>@energym.pilates.studio</td><td>1.9K</td><td>Pilates</td><td>Collados, Mirador, Sta Maria</td></tr>
-            <tr><td><strong>Hanuman Yoga</strong></td><td>@hanumanyogamonterrey</td><td>1.6K</td><td>Yoga</td><td>Periferico</td></tr>
-            <tr><td><strong>Movefit</strong></td><td>@movefitstudio</td><td>1.6K</td><td>Barre/Multi</td><td>Cumbres</td></tr>
-            <tr><td><strong>Shakti Pilates</strong></td><td>@shaktipilates.mx</td><td>665</td><td>Pilates</td><td>Bosques Satelite</td></tr>
-            <tr><td><strong>Bodycamp</strong></td><td>@bodycamp.mx</td><td>355</td><td>Bootcamp</td><td>San Pedro</td></tr>
-            <tr><td><strong>Loom Pilates</strong></td><td>@loomstudiomx</td><td>--</td><td>Pilates</td><td>Monterrey</td></tr>
-            <tr><td><strong>ANAPILATES</strong></td><td>@anapilates_rs</td><td>--</td><td>Pilates</td><td>Monterrey</td></tr>
-            <tr><td><strong>Think Pilates</strong></td><td>@thinkpilates.mx</td><td>--</td><td>Pilates</td><td>Tec / San Jeronimo</td></tr>
+            <tr>
+              <td><strong>Energym Pilates</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@energym.pilates.studio</span></td>
+              <td>1.9K</td><td>Pilates</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td>
+              <td>Collados, Mirador, Sta Maria</td><td><span class="badge badge-b">W+TP</span></td>
+            </tr>
+            <tr>
+              <td><strong>Hanuman Yoga</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@hanumanyogamonterrey</span></td>
+              <td>1.6K</td><td>Yoga</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td>
+              <td>Periferico</td><td><span class="badge badge-b">W+TP</span></td>
+            </tr>
+            <tr>
+              <td><strong>Movefit</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@movefitstudio</span></td>
+              <td>1.6K</td><td>Barre/Multi</td>
+              <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td>
+              <td>Cumbres</td><td><span class="opp-badge">SIN AGREGADOR</span></td>
+            </tr>
+            <tr>
+              <td><strong>Shakti Pilates</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@shaktipilates.mx</span></td>
+              <td>665</td><td>Pilates</td>
+              <td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td>
+              <td>Bosques Satelite</td><td><span class="badge badge-b">Solo Wellhub</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bodycamp</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@bodycamp.mx</span></td>
+              <td>355</td><td>Bootcamp</td>
+              <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td>
+              <td>San Pedro</td><td><span class="opp-badge">SIN AGREGADOR</span></td>
+            </tr>
+            <tr>
+              <td><strong>Loom Pilates</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@loomstudiomx</span></td>
+              <td>--</td><td>Pilates</td>
+              <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td>
+              <td>Monterrey</td><td><span class="opp-badge">SIN AGREGADOR</span></td>
+            </tr>
+            <tr>
+              <td><strong>ANAPILATES</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@anapilates_rs</span></td>
+              <td>--</td><td>Pilates</td>
+              <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td>
+              <td>Monterrey</td><td><span class="opp-badge">SIN AGREGADOR</span></td>
+            </tr>
+            <tr>
+              <td><strong>Think Pilates</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@thinkpilates.mx</span></td>
+              <td>--</td><td>Pilates</td>
+              <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td>
+              <td>Tec / San Jeronimo</td><td><span class="opp-badge">SIN AGREGADOR</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
