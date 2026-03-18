@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ummove — Modelo de Creditos & Estudios MTY</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #1c1c1c;
+      --border: #2a2a2a;
+      --text: #e5e5e5;
+      --text-muted: #888;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --green: #22c55e;
+      --green-dim: #166534;
+      --red: #ef4444;
+      --red-dim: #7f1d1d;
+      --yellow: #eab308;
+      --yellow-dim: #713f12;
+      --blue: #3b82f6;
+      --cyan: #06b6d4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent-light), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 3rem 0 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: var(--accent-light);
+    }
+
+    /* Formula Hero */
+    .formula-hero {
+      background: linear-gradient(135deg, #1e1b4b, #0f172a);
+      border: 1px solid #312e81;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .formula-hero .equation {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .formula-hero .equation .part {
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .part-user { background: #1e3a5f; border: 1px solid #2563eb; }
+    .part-studio { background: #14532d; border: 1px solid #22c55e; }
+    .part-ummove { background: #3b0764; border: 1px solid #a855f7; }
+
+    .part .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.7;
+    }
+
+    .part .value {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .operator {
+      font-size: 2rem;
+      color: var(--text-muted);
+    }
+
+    .formula-note {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    /* Stat Cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .stat-card .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-card .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0.25rem 0;
+    }
+
+    .stat-card .stat-detail {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .green { color: var(--green); }
+    .red { color: var(--red); }
+    .yellow { color: var(--yellow); }
+    .blue { color: var(--blue); }
+    .cyan { color: var(--cyan); }
+    .accent { color: var(--accent-light); }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: var(--surface-2);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tr:hover td { background: var(--surface); }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .badge-a { background: #166534; color: #86efac; }
+    .badge-b { background: #713f12; color: #fde047; }
+    .badge-c { background: #1e293b; color: #94a3b8; }
+    .badge-green { background: #052e16; color: #4ade80; }
+    .badge-red { background: #450a0a; color: #fca5a5; }
+
+    /* Comparison Cards */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .comp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .comp-card-header {
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .comp-card-header h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .comp-card-body { padding: 1.25rem; }
+
+    .comp-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comp-row:last-child { border-bottom: none; }
+    .comp-row .comp-label { color: var(--text-muted); font-size: 0.9rem; }
+    .comp-row .comp-value { font-weight: 600; }
+
+    /* Scenario Box */
+    .scenario {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .scenario-title {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .scenario-vs {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .vs-box {
+      background: var(--surface-2);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .vs-box .vs-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+    }
+
+    .vs-divider {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .savings-bar {
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .savings-bar .savings-pct {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    /* Revenue Stack */
+    .revenue-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .rev-bar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .rev-bar-fill {
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .rev-bar-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      min-width: 160px;
+    }
+
+    /* Tier Section */
+    .tier-section {
+      margin: 2rem 0;
+    }
+
+    .tier-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .tier-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .tier-a { background: #166534; color: #86efac; }
+    .tier-b { background: #713f12; color: #fde047; }
+    .tier-c { background: #1e293b; color: #94a3b8; }
+
+    /* Social Booking Visual */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .social-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .social-card .people {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .social-card .s-credits {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .social-card .s-studio {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin: 0.25rem 0;
+    }
+
+    .social-card .s-pct {
+      font-size: 0.75rem;
+    }
+
+    /* Callout */
+    .callout {
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong { color: var(--accent-light); }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+
+    .tab {
+      padding: 0.75rem 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all 0.2s;
+    }
+
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--accent-light); border-bottom-color: var(--accent); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Progress bar */
+    .progress-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 8px;
+      background: var(--surface-2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+
+    .progress-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      min-width: 45px;
+      text-align: right;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.75rem; }
+      .formula-hero .equation { font-size: 1.2rem; }
+      .part .value { font-size: 1.2rem; }
+      .social-grid { grid-template-columns: repeat(2, 1fr); }
+      .scenario-vs { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <h1>Ummove Credit Model</h1>
+    <p class="subtitle">Modelo de creditos, estudios Monterrey & unit economics — Marzo 2026</p>
+
+    <!-- ==================== FORMULA ==================== -->
+    <h2>La Formula Universal</h2>
+
+    <div class="formula-hero">
+      <div class="equation">
+        <div class="part part-user">
+          <span class="label">Usuario paga</span>
+          <span class="value">$20</span>
+        </div>
+        <span class="operator">=</span>
+        <div class="part part-studio">
+          <span class="label">Estudio recibe</span>
+          <span class="value">$15</span>
+        </div>
+        <span class="operator">+</span>
+        <div class="part part-ummove">
+          <span class="label">Ummove</span>
+          <span class="value">$5</span>
+        </div>
+      </div>
+      <p class="formula-note">Precio por credito. $15 al estudio es fijo, nunca cambia. El estudio siempre sabe exactamente cuanto recibe.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Margen base</div>
+        <div class="stat-value accent">25%</div>
+        <div class="stat-detail">$5 por credito consumido</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Margen combinado</div>
+        <div class="stat-value green">~43%</div>
+        <div class="stat-detail">Con breakage + placements + cancelaciones</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">vs Wellhub</div>
+        <div class="stat-value cyan">2.1x</div>
+        <div class="stat-detail">Ummove paga 2x mas al estudio</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">vs TotalPass</div>
+        <div class="stat-value cyan">2.5x</div>
+        <div class="stat-detail">Ummove paga 2.5x mas al estudio</div>
+      </div>
+    </div>
+
+    <!-- ==================== CREDITOS POR HORARIO ==================== -->
+    <h2>Creditos por Bloque de Horario</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Bloque</th>
+          <th>Horario</th>
+          <th>Creditos</th>
+          <th>Usuario paga</th>
+          <th>Estudio recibe</th>
+          <th>Ummove</th>
+          <th>Tag en app</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Peak AM</strong></td>
+          <td>6:00 - 9:00 AM</td>
+          <td>12</td>
+          <td>$240</td>
+          <td class="green">$180</td>
+          <td>$60</td>
+          <td><span class="badge" style="background:#1e293b;color:#94a3b8">Estandar</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--green)">Valley</strong></td>
+          <td>9:00 AM - 4:00 PM</td>
+          <td>8</td>
+          <td>$160</td>
+          <td class="green">$120</td>
+          <td>$40</td>
+          <td><span class="badge badge-green">Smart Price -33%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Transicion</strong></td>
+          <td>4:00 - 5:00 PM</td>
+          <td>10</td>
+          <td>$200</td>
+          <td class="green">$150</td>
+          <td>$50</td>
+          <td><span class="badge" style="background:#1e293b;color:#94a3b8">Regular</span></td>
+        </tr>
+        <tr>
+          <td><strong>Peak PM</strong></td>
+          <td>5:00 - 9:00 PM</td>
+          <td>12</td>
+          <td>$240</td>
+          <td class="green">$180</td>
+          <td>$60</td>
+          <td><span class="badge" style="background:#1e293b;color:#94a3b8">Estandar</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>Tope maximo: 15 creditos.</strong> Ninguna clase cuesta mas de 15 creditos ($300 usuario / $225 estudio). Aplica para estudios premium que lo soliciten.
+    </div>
+
+    <!-- ==================== PLANES USUARIO ==================== -->
+    <h2>Planes de Usuario</h2>
+
+    <div class="comparison-grid">
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <h4>Basico</h4>
+          <span class="badge" style="background:#1e3a5f;color:#93c5fd">Entrada</span>
+        </div>
+        <div class="comp-card-body">
+          <div class="comp-row"><span class="comp-label">Precio</span><span class="comp-value">$600/mes</span></div>
+          <div class="comp-row"><span class="comp-label">Creditos</span><span class="comp-value">30</span></div>
+          <div class="comp-row"><span class="comp-label">$/credito</span><span class="comp-value">$20</span></div>
+          <div class="comp-row"><span class="comp-label">Clases Valley</span><span class="comp-value">3-4</span></div>
+          <div class="comp-row"><span class="comp-label">Clases Peak</span><span class="comp-value">2-3</span></div>
+          <div class="comp-row"><span class="comp-label">Margen Ummove</span><span class="comp-value green">$150 (25%)</span></div>
+        </div>
+      </div>
+
+      <div class="comp-card" style="border-color:var(--accent)">
+        <div class="comp-card-header" style="background:#1e1b4b">
+          <h4>Plus</h4>
+          <span class="badge" style="background:#312e81;color:#a5b4fc">Popular</span>
+        </div>
+        <div class="comp-card-body">
+          <div class="comp-row"><span class="comp-label">Precio</span><span class="comp-value">$1,140/mes</span></div>
+          <div class="comp-row"><span class="comp-label">Creditos</span><span class="comp-value">60</span></div>
+          <div class="comp-row"><span class="comp-label">$/credito</span><span class="comp-value">$19</span></div>
+          <div class="comp-row"><span class="comp-label">Clases Valley</span><span class="comp-value">7-8</span></div>
+          <div class="comp-row"><span class="comp-label">Clases Peak</span><span class="comp-value">5</span></div>
+          <div class="comp-row"><span class="comp-label">Margen Ummove</span><span class="comp-value green">$240 (21%)</span></div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <h4>Premium</h4>
+          <span class="badge" style="background:#3b0764;color:#d8b4fe">Power user</span>
+        </div>
+        <div class="comp-card-body">
+          <div class="comp-row"><span class="comp-label">Precio</span><span class="comp-value">$2,160/mes</span></div>
+          <div class="comp-row"><span class="comp-label">Creditos</span><span class="comp-value">120</span></div>
+          <div class="comp-row"><span class="comp-label">$/credito</span><span class="comp-value">$18</span></div>
+          <div class="comp-row"><span class="comp-label">Clases Valley</span><span class="comp-value">15</span></div>
+          <div class="comp-row"><span class="comp-label">Clases Peak</span><span class="comp-value">10</span></div>
+          <div class="comp-row"><span class="comp-label">Margen Ummove</span><span class="comp-value green">$360 (17%)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== POR QUE LE CONVIENE AL USUARIO ==================== -->
+    <h2>Por Que le Conviene al Usuario (incluso a $20/credito)</h2>
+
+    <div class="scenario">
+      <div class="scenario-title">Escenario: Maria quiere 3 clases diferentes por semana</div>
+      <div class="scenario-vs">
+        <div class="vs-box">
+          <div style="font-size:0.85rem;color:var(--text-muted)">Sin Ummove (drop-in)</div>
+          <div class="vs-price red">$3,000<span style="font-size:0.8rem;font-weight:400">/mes</span></div>
+          <div style="font-size:0.85rem;color:var(--text-muted)">
+            Cycling $200 + Pilates $250 + Bootcamp $300<br>= $750/sem x 4
+          </div>
+        </div>
+        <div class="vs-divider">VS</div>
+        <div class="vs-box">
+          <div style="font-size:0.85rem;color:var(--text-muted)">Con Ummove Basico (Valley)</div>
+          <div class="vs-price green">$600<span style="font-size:0.8rem;font-weight:400">/mes</span></div>
+          <div style="font-size:0.85rem;color:var(--text-muted)">
+            3 clases Valley x 8cr = 24cr/sem<br>30cr cubren ~4 clases/mes
+          </div>
+        </div>
+      </div>
+      <div class="savings-bar">
+        <div class="savings-pct">Ahorra 80%</div>
+        <div style="font-size:0.85rem;color:var(--text-muted)">Y accede a 50+ estudios con una sola suscripcion</div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <div class="scenario-title">Escenario: Carlos quiere 2 clases/semana (8/mes) en horario Valley</div>
+      <div class="scenario-vs">
+        <div class="vs-box">
+          <div style="font-size:0.85rem;color:var(--text-muted)">Directo en Midline (8 sesiones)</div>
+          <div class="vs-price yellow">$1,540<span style="font-size:0.8rem;font-weight:400">/mes</span></div>
+          <div style="font-size:0.85rem;color:var(--text-muted)">Paquete 8 sesiones, solo Midline</div>
+        </div>
+        <div class="vs-divider">VS</div>
+        <div class="vs-box">
+          <div style="font-size:0.85rem;color:var(--text-muted)">Ummove Plus (Valley)</div>
+          <div class="vs-price green">$1,140<span style="font-size:0.8rem;font-weight:400">/mes</span></div>
+          <div style="font-size:0.85rem;color:var(--text-muted)">60cr / 8cr = 7 clases Valley<br>En cualquier estudio</div>
+        </div>
+      </div>
+      <div class="savings-bar">
+        <div class="savings-pct">Ahorra 26% + variedad de 50 estudios</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>La clave:</strong> Ummove conviene cuando el usuario va a horarios Valley y/o a multiples estudios. El valor es VARIEDAD + SMART PRICING, no el precio por clase en un solo estudio.
+    </div>
+
+    <!-- ==================== SOCIAL BOOKING ==================== -->
+    <h2>Social Booking: El Multiplicador</h2>
+    <p style="color:var(--text-muted);margin-bottom:1rem">Ejemplo: clase Peak (12 creditos base). El estudio recibe por TODAS las personas.</p>
+
+    <div class="social-grid">
+      <div class="social-card">
+        <div class="people">1 persona</div>
+        <div class="s-credits">12 cr/persona</div>
+        <div class="s-studio">$180</div>
+        <div class="s-pct" style="color:var(--text-muted)">1.0x</div>
+      </div>
+      <div class="social-card" style="border-color:var(--green)">
+        <div class="people">2 amigos</div>
+        <div class="s-credits">11 cr/persona (-10%)</div>
+        <div class="s-studio">$330</div>
+        <div class="s-pct green">1.8x</div>
+      </div>
+      <div class="social-card" style="border-color:var(--green)">
+        <div class="people">3 amigos</div>
+        <div class="s-credits">10 cr/persona (-20%)</div>
+        <div class="s-studio">$450</div>
+        <div class="s-pct green">2.5x</div>
+      </div>
+      <div class="social-card" style="border-color:var(--green)">
+        <div class="people">4 amigos</div>
+        <div class="s-credits">8 cr/persona (-30%)</div>
+        <div class="s-studio">$480</div>
+        <div class="s-pct green">2.7x</div>
+      </div>
+      <div class="social-card" style="border-color:#22c55e;background:#052e16">
+        <div class="people">5+ amigos</div>
+        <div class="s-credits">7 cr/persona (-40%)</div>
+        <div class="s-studio">$525+</div>
+        <div class="s-pct" style="color:#4ade80;font-weight:700">3.0x</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Con 2 personas, el estudio recibe $330</strong> — mas que un drop-in de $300 en Anatomy. Con 3, recibe $450. El Social Booking es el pitch killer para estudios premium.
+    </div>
+
+    <!-- ==================== PAGO A ESTUDIOS vs COMPETENCIA ==================== -->
+    <h2>Cuanto Paga Ummove vs la Competencia</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Plataforma</th>
+          <th>Pago al estudio/visita</th>
+          <th>% del drop-in ($250)</th>
+          <th>Comparacion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color:var(--accent-light)">Ummove Peak</strong></td>
+          <td class="green"><strong>$180</strong></td>
+          <td>72%</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar"><div class="progress-fill" style="width:72%;background:var(--accent)"></div></div>
+              <span class="progress-label accent">72%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--green)">Ummove Valley</strong></td>
+          <td class="green"><strong>$120</strong></td>
+          <td>48%</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar"><div class="progress-fill" style="width:48%;background:var(--green)"></div></div>
+              <span class="progress-label green">48%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Fitpass</td>
+          <td>~$85</td>
+          <td>34%</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar"><div class="progress-fill" style="width:34%;background:var(--yellow)"></div></div>
+              <span class="progress-label yellow">34%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Wellhub</td>
+          <td>~$70</td>
+          <td>28%</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar"><div class="progress-fill" style="width:28%;background:var(--red)"></div></div>
+              <span class="progress-label red">28%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>TotalPass</td>
+          <td>~$60</td>
+          <td>24%</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar"><div class="progress-fill" style="width:24%;background:var(--red)"></div></div>
+              <span class="progress-label red">24%</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== ESTUDIOS POR TIER ==================== -->
+    <h2>Estudios Monterrey por Tier</h2>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('tier-a')">A Tier</button>
+      <button class="tab" onclick="switchTab('tier-b')">B Tier</button>
+      <button class="tab" onclick="switchTab('tier-c')">C Tier</button>
+    </div>
+
+    <!-- A TIER -->
+    <div id="tier-a" class="tab-content active">
+      <div class="tier-section">
+        <div class="tier-header">
+          <div class="tier-badge tier-a">A</div>
+          <div>
+            <strong>Priority Partners — Onboarding inmediato</strong>
+            <div style="font-size:0.85rem;color:var(--text-muted)">10K+ seguidores, presencia digital fuerte, ubicaciones premium</div>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Estudio</th>
+              <th>Instagram</th>
+              <th>Seguidores</th>
+              <th>Disciplina</th>
+              <th>Paquete popular ($/cl)</th>
+              <th>Ummove Peak ($180)</th>
+              <th>% del paquete</th>
+              <th>Pitch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Anatomy</strong></td>
+              <td>@anatomymx</td>
+              <td>52K</td>
+              <td>Multi</td>
+              <td>10cl = $230</td>
+              <td class="green">$180</td>
+              <td>
+                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:78%;background:var(--yellow)"></div></div><span class="progress-label yellow">78%</span></div>
+              </td>
+              <td><span class="badge badge-b">Social Booking</span></td>
+            </tr>
+            <tr>
+              <td><strong>BICIO</strong></td>
+              <td>@biciomxstudio</td>
+              <td>42K</td>
+              <td>Cycling</td>
+              <td>~$200 est.</td>
+              <td class="green">$180</td>
+              <td>
+                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:90%;background:var(--green)"></div></div><span class="progress-label green">~90%</span></div>
+              </td>
+              <td><span class="badge badge-green">Facil</span></td>
+            </tr>
+            <tr>
+              <td><strong>Zone Fitness</strong></td>
+              <td>@zone.mx</td>
+              <td>36K</td>
+              <td>Cycling</td>
+              <td>10cl = $260 / $190</td>
+              <td class="green">$180</td>
+              <td>
+                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:82%;background:var(--yellow)"></div></div><span class="progress-label yellow">69-95%</span></div>
+              </td>
+              <td><span class="badge badge-b">Omnia primero</span></td>
+            </tr>
+            <tr>
+              <td><strong>11:11 Fitness</strong></td>
+              <td>@onceoncefitness</td>
+              <td>25K</td>
+              <td>Multi</td>
+              <td>No publicado</td>
+              <td class="green">$180</td>
+              <td><span style="color:var(--text-muted)">--</span></td>
+              <td><span class="badge badge-b">6 sucursales</span></td>
+            </tr>
+            <tr>
+              <td><strong>Atoms Studio</strong></td>
+              <td>@atomsstudio</td>
+              <td>22K</td>
+              <td>Pilates</td>
+              <td>8ses = $313</td>
+              <td class="green">$180</td>
+              <td>
+                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:58%;background:var(--red)"></div></div><span class="progress-label red">58%</span></div>
+              </td>
+              <td><span class="badge badge-red">Solo Valley</span></td>
+            </tr>
+            <tr>
+              <td><strong>Midline</strong></td>
+              <td>@midlinepilates.mx</td>
+              <td>18.6K</td>
+              <td>Pilates</td>
+              <td>8ses = $193</td>
+              <td class="green">$180</td>
+              <td>
+                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:93%;background:var(--green)"></div></div><span class="progress-label green">93%</span></div>
+              </td>
+              <td><span class="badge badge-green">Facil</span></td>
+            </tr>
+            <tr>
+              <td><strong>CF Tigran</strong></td>
+              <td>@crossfittigran</td>
+              <td>17K</td>
+              <td>CrossFit</td>
+              <td>~$165/mes</td>
+              <td class="green">$180</td>
+              <td>
+                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div><span class="progress-label green">109%</span></div>
+              </td>
+              <td><span class="badge badge-green">Paga MAS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Spin It</strong></td>
+              <td>@spinitmx</td>
+              <td>15K</td>
+              <td>Cycling</td>
+              <td>10cl = $170</td>
+              <td class="green">$180</td>
+              <td>
+                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div><span class="progress-label green">106%</span></div>
+              </td>
+              <td><span class="badge badge-green">Paga MAS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Rollin</strong></td>
+              <td>@rollincyclingstudio</td>
+              <td>14K</td>
+              <td>Cycling</td>
+              <td>10cl = $175</td>
+              <td class="green">$180</td>
+              <td>
+                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div><span class="progress-label green">103%</span></div>
+              </td>
+              <td><span class="badge badge-green">Paga MAS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Haven</strong></td>
+              <td>@havenstudio.mty</td>
+              <td>12K</td>
+              <td>Pilates</td>
+              <td>10cl = $225</td>
+              <td class="green">$180</td>
+              <td>
+                <div class="progress-container"><div class="progress-bar"><div class="progress-fill" style="width:80%;background:var(--yellow)"></div></div><span class="progress-label yellow">80%</span></div>
+              </td>
+              <td><span class="badge badge-b">Social Booking</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- B TIER -->
+    <div id="tier-b" class="tab-content">
+      <div class="tier-section">
+        <div class="tier-header">
+          <div class="tier-badge tier-b">B</div>
+          <div>
+            <strong>Growth Partners — Fase 2</strong>
+            <div style="font-size:0.85rem;color:var(--text-muted)">2K-10K seguidores, especializados, llenan catalogo</div>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Estudio</th><th>Instagram</th><th>Seguidores</th><th>Disciplina</th><th>Ubicacion</th><th>Precios publicados</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>V Pilates</strong></td><td>@vpilatesmx</td><td>6K</td><td>Pilates+</td><td>Valle Oriente, San Agustin</td><td>No (Wellhub)</td></tr>
+            <tr><td><strong>ALOT Studio</strong></td><td>@alotstudiomx</td><td>5.9K</td><td>Cycling</td><td>Merida (expansion)</td><td>Si — ilimitado $1,799</td></tr>
+            <tr><td><strong>Evofit</strong></td><td>@evofitgimnasios</td><td>5.5K</td><td>CrossFit/Gym</td><td>Zona Tec</td><td>No</td></tr>
+            <tr><td><strong>CF Tigran Sur</strong></td><td>@crossfittigransur</td><td>4.6K</td><td>CrossFit</td><td>Monterrey Sur</td><td>No</td></tr>
+            <tr><td><strong>Hera Studio</strong></td><td>@herapilatesstudio</td><td>3.6K</td><td>Pilates</td><td>Cumbres</td><td>No (Wellhub)</td></tr>
+            <tr><td><strong>11:11 Contry</strong></td><td>@onceoncecontry</td><td>3.2K</td><td>Multi</td><td>Contry</td><td>No</td></tr>
+            <tr><td><strong>Space Studio</strong></td><td>@spacestudio.mx</td><td>2.9K</td><td>Cycling</td><td>San Jeronimo</td><td>Si — desde $95/cl</td></tr>
+            <tr><td><strong>Beyond Cycling</strong></td><td>@beyondcyclingstudio</td><td>2.7K</td><td>Cycling</td><td>Pueblo Serena</td><td>Web caida</td></tr>
+            <tr><td><strong>OTF Monterrey</strong></td><td>@orangetheorymty</td><td>2.5K</td><td>HIIT</td><td>San Pedro</td><td>Si — desde $1,500/mes</td></tr>
+            <tr><td><strong>D'Asana</strong></td><td>@d_asana_studio</td><td>2.3K</td><td>Bikram</td><td>San Pedro</td><td>No</td></tr>
+            <tr><td><strong>CF Absoluto</strong></td><td>@crossfitabsoluto</td><td>2.3K</td><td>CrossFit</td><td>Mirador</td><td>Prueba $150</td></tr>
+            <tr><td><strong>Love Pilates</strong></td><td>@lovepilatesmty</td><td>2.2K</td><td>Pilates</td><td>2 sucursales</td><td>Si — desde $128/cl</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- C TIER -->
+    <div id="tier-c" class="tab-content">
+      <div class="tier-section">
+        <div class="tier-header">
+          <div class="tier-badge tier-c">C</div>
+          <div>
+            <strong>Long Tail — Self-serve onboarding</strong>
+            <div style="font-size:0.85rem;color:var(--text-muted)">&lt;2K seguidores, nicho, complementan catalogo</div>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Estudio</th><th>Instagram</th><th>Seguidores</th><th>Disciplina</th><th>Ubicacion</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Energym Pilates</strong></td><td>@energym.pilates.studio</td><td>1.9K</td><td>Pilates</td><td>Collados, Mirador, Sta Maria</td></tr>
+            <tr><td><strong>Hanuman Yoga</strong></td><td>@hanumanyogamonterrey</td><td>1.6K</td><td>Yoga</td><td>Periferico</td></tr>
+            <tr><td><strong>Movefit</strong></td><td>@movefitstudio</td><td>1.6K</td><td>Barre/Multi</td><td>Cumbres</td></tr>
+            <tr><td><strong>Shakti Pilates</strong></td><td>@shaktipilates.mx</td><td>665</td><td>Pilates</td><td>Bosques Satelite</td></tr>
+            <tr><td><strong>Bodycamp</strong></td><td>@bodycamp.mx</td><td>355</td><td>Bootcamp</td><td>San Pedro</td></tr>
+            <tr><td><strong>Loom Pilates</strong></td><td>@loomstudiomx</td><td>--</td><td>Pilates</td><td>Monterrey</td></tr>
+            <tr><td><strong>ANAPILATES</strong></td><td>@anapilates_rs</td><td>--</td><td>Pilates</td><td>Monterrey</td></tr>
+            <tr><td><strong>Think Pilates</strong></td><td>@thinkpilates.mx</td><td>--</td><td>Pilates</td><td>Tec / San Jeronimo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ==================== REVENUE MODEL ==================== -->
+    <h2>Revenue Model Completo (1,000 usuarios)</h2>
+    <p style="color:var(--text-muted);margin-bottom:1rem">Mix: 40% Basico, 40% Plus, 20% Premium</p>
+
+    <div class="revenue-stack">
+      <div class="rev-bar">
+        <span class="rev-bar-label">Suscripciones (25%)</span>
+        <div class="rev-bar-fill" style="width:42%;background:var(--accent)">$220K/mes</div>
+      </div>
+      <div class="rev-bar">
+        <span class="rev-bar-label">Breakage ~15% (100%)</span>
+        <div class="rev-bar-fill" style="width:30%;background:var(--green)">$157K/mes</div>
+      </div>
+      <div class="rev-bar">
+        <span class="rev-bar-label">Featured (50 estudios)</span>
+        <div class="rev-bar-fill" style="width:28%;background:var(--cyan)">$150K/mes</div>
+      </div>
+      <div class="rev-bar">
+        <span class="rev-bar-label">Cancelaciones Tier 2</span>
+        <div class="rev-bar-fill" style="width:2%;background:var(--yellow);min-width:80px">$4K/mes</div>
+      </div>
+    </div>
+
+    <div class="stats-grid" style="margin-top:1.5rem">
+      <div class="stat-card" style="border-color:var(--accent)">
+        <div class="stat-label">Revenue total</div>
+        <div class="stat-value accent">$1.22M</div>
+        <div class="stat-detail">/mes con 1,000 usuarios</div>
+      </div>
+      <div class="stat-card" style="border-color:var(--green)">
+        <div class="stat-label">Margen combinado</div>
+        <div class="stat-value green">$531K</div>
+        <div class="stat-detail">43.6% margen efectivo</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">A 5,000 usuarios</div>
+        <div class="stat-value cyan">$2.6M</div>
+        <div class="stat-detail">margen/mes proyectado</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Break-even est.</div>
+        <div class="stat-value yellow">~200</div>
+        <div class="stat-detail">usuarios para cubrir ops basicas</div>
+      </div>
+    </div>
+
+    <!-- ==================== CONCLUSION ==================== -->
+    <h2>La Formula Funciona. Asi se Defiende:</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card" style="border-left:3px solid var(--green)">
+        <div class="stat-label">Para el estudio</div>
+        <div class="stat-value" style="font-size:1.2rem">$15/credito = 2x Wellhub</div>
+        <div class="stat-detail">$120-180/visita. Sillas vacias que hoy generan $0 ahora generan ingreso real. Con Social Booking, una reservacion de 3 personas = $450.</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--blue)">
+        <div class="stat-label">Para el usuario</div>
+        <div class="stat-value" style="font-size:1.2rem">Ahorra 26-80% vs drop-in</div>
+        <div class="stat-detail">Valley pricing + variedad de 50+ estudios con una sola suscripcion. Sin compromiso con un solo lugar.</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--accent)">
+        <div class="stat-label">Para Ummove</div>
+        <div class="stat-value" style="font-size:1.2rem">43% margen combinado</div>
+        <div class="stat-detail">25% base en creditos + breakage + featured placements + cancelaciones. Viable desde 200 usuarios.</div>
+      </div>
+    </div>
+
+    <div class="callout" style="border-color:var(--green);margin-top:2rem">
+      <strong>No tocar los $15/credito al estudio.</strong> Es el MOAT competitivo mas fuerte. Los margenes se optimizan con capas de revenue adicional (breakage, featured, corporate), no comprimiendo el pago al partner.
+    </div>
+
+    <div class="footer">
+      Ummove Technologies Mexico S. de R.L. de C.V. — Documento interno, Marzo 2026<br>
+      30 estudios mapeados en Monterrey. Precios sujetos a cambio.
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      const tabs = document.querySelectorAll('.tab');
+      const tabMap = { 'tier-a': 0, 'tier-b': 1, 'tier-c': 2 };
+      tabs[tabMap[tabId]].classList.add('active');
+    }
+  </script>
+</body>
+</html>
