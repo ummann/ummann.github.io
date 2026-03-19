@@ -1218,80 +1218,198 @@
       </tbody>
     </table>
 
-    <h3>Nuevos C-Tier (relevantes por disciplina unica)</h3>
-    <table>
-      <thead>
-        <tr><th>Estudio</th><th>Seguidores</th><th>Disciplina</th><th>Ubicacion</th><th>Wellhub</th><th>TotalPass</th><th>Fitpass</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>GAIN Pilates Cardio</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@gainpilatescardio</span></td>
-          <td>--</td><td>Pilates Reformer</td><td>Del Valle + Herradura</td>
-          <td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-yes">SI</span></td>
-        </tr>
-        <tr>
-          <td><strong>Empower Pilates</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@empowerpilatessanpedro</span></td>
-          <td>~1K</td><td>Pilates, GAP, Aerial, Barre, Cycling</td><td>Plaza XO + Urban Village, San Pedro</td>
-          <td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td>
-        </tr>
-        <tr>
-          <td><strong>Lap Cycling</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@lap.cycling</span></td>
-          <td>1.8K</td><td>Indoor Cycling</td><td>Pso. Las Americas 230, Guadalupe</td>
-          <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-yes">SI</span></td>
-        </tr>
-        <tr>
-          <td><strong>Khoreo</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@khoreostudio</span></td>
-          <td>1.6K</td><td>Dance (Latin, Hip Hop, Jazz)</td><td>Lazaro Garza Ayala 105, San Pedro</td>
-          <td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-yes">SI</span></td>
-        </tr>
-        <tr>
-          <td><strong>Metcon House</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@metconhouse</span></td>
-          <td>--</td><td>HIIT / MetCon</td><td>Puerta de Hierro 510 + La Luz</td>
-          <td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-yes">SI</span></td>
-        </tr>
-        <tr>
-          <td><strong>Boden</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@bodenmx</span></td>
-          <td>--</td><td>Functional, HIIT, Yoguilates</td><td>Anillo Periferico 1604, San Jeronimo</td>
-          <td><span class="plat-yes">SI</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-yes">SI</span></td>
-        </tr>
-        <tr>
-          <td><strong>Zpinfortyfive</strong><br><span style="color:var(--text-muted);font-size:0.8rem">@zpinfortyfive</span></td>
-          <td>--</td><td>Indoor Cycling</td><td>2 suc: Gomez Morin (Plaza Vita) + Magma</td>
-          <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-yes">SI</span></td>
-        </tr>
-        <tr>
-          <td><strong>Black Box</strong><br><span style="color:var(--text-muted);font-size:0.8rem">--</span></td>
-          <td>--</td><td>Boutique Boxing</td><td>Calzada San Pedro 202, Plaza XO</td>
-          <td><span class="plat-no">NO</span></td><td><span class="plat-no">NO</span></td><td><span class="plat-yes">SI</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <h3>Catalogo Completo por Categoria</h3>
+    <p style="color:var(--text-muted);margin-bottom:1rem">Todos los estudios adicionales descubiertos via Fitpass, Wellhub y TotalPass.</p>
+
+    <div class="tabs" style="flex-wrap:wrap">
+      <button class="tab" onclick="switchCat('cat-pilates')">Pilates (21)</button>
+      <button class="tab" onclick="switchCat('cat-cycling')">Cycling (8)</button>
+      <button class="tab" onclick="switchCat('cat-yoga')">Yoga (13)</button>
+      <button class="tab" onclick="switchCat('cat-crossfit')">CrossFit/Func (12)</button>
+      <button class="tab" onclick="switchCat('cat-boxing')">Boxing (10)</button>
+      <button class="tab" onclick="switchCat('cat-barre')">Barre/Dance (12)</button>
+      <button class="tab" onclick="switchCat('cat-other')">Otros (15)</button>
+    </div>
+
+    <!-- PILATES -->
+    <div id="cat-pilates" class="tab-content active">
+      <table>
+        <thead><tr><th>Estudio</th><th>IG</th><th>Ubicacion</th><th>W</th><th>TP</th><th>FP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Coreflow</strong></td><td>@coreflow.mx <span class="cyan">6.3K</span></td><td>Plaza H100</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Moon Pilates</strong></td><td>@moonpilatesmty <span class="cyan">5.7K</span></td><td>Lemon Park / La Herradura</td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Slowhouse</strong></td><td>@slowhouse.co <span class="cyan">4K</span></td><td>Plaza Omnia / Comunia</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Core Studio Pilates</strong></td><td>@corestudio.mx <span class="cyan">3.8K</span></td><td>Perim. Nte 813 / Manuel Ordonez 100</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>House of Balance</strong></td><td>@houseofbalance.mx <span class="cyan">3.3K</span></td><td>Plaza Musas, Alfonso Reyes 329</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Malika Pilates</strong></td><td>@malikapilates <span class="cyan">3K</span></td><td>Rio Orinoco, Del Valle</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Pilathy</strong></td><td>@pilathystudio <span class="cyan">3K</span></td><td>Plaza Sikara, Cumbres Madeira</td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Nation Pilates</strong></td><td>@nationpilatesreformer <span class="cyan">2.6K</span></td><td>Torre Elysium #105</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Alea Pilates</strong></td><td>@aleapilates <span class="cyan">2.4K</span></td><td>San Jeronimo</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Onyx Pilates</strong></td><td>@myonyxfit</td><td>Plaza Maranta, Del Valle</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>DoMa Pilates</strong></td><td>@domapilatesreformer <span class="cyan">2K</span></td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Posture MTY</strong></td><td>@posture.mty</td><td>Plaza Alquimia, El Barro</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Matness Pilates</strong></td><td>@matnesspilates</td><td>Calzada del Valle 406, Del Valle</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Oh My Core</strong></td><td>@ohmycorestudio</td><td>Cumbres + Las Puentes</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Munay Pilates</strong></td><td>@munaypilates</td><td>Plaza Villa Almendros</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>GAIN Pilates</strong></td><td>@gainpilatescardio</td><td>Del Valle + Herradura</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Empower</strong></td><td>@empowerpilatessanpedro <span class="cyan">1K</span></td><td>Plaza XO + Urban Village</td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>E44 Pilates</strong></td><td>@e44pilates <span class="cyan">1.7K</span></td><td>Plaza Santa Monica</td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Selah Pilates</strong></td><td>--</td><td>Cumbres</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Bloom Pilates</strong></td><td>--</td><td>Av. Del Estado 215A, Tec</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Studio 12 Pilates</strong></td><td>--</td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CYCLING -->
+    <div id="cat-cycling" class="tab-content">
+      <table>
+        <thead><tr><th>Estudio</th><th>IG</th><th>Ubicacion</th><th>W</th><th>TP</th><th>FP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Becycle</strong></td><td>@becyclemty <span class="cyan">4.2K</span></td><td>Plaza La Herradura</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Zpinfortyfive</strong></td><td>@zpinfortyfive</td><td>2 suc: Gomez Morin + Magma</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>HIIVER</strong></td><td>hiiver.mx</td><td>Gomez Morin, San Pedro</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Bike Vibe</strong></td><td>@bikevibemx <span class="cyan">2K</span></td><td>Plaza Forum Leones</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Lap Cycling</strong></td><td>@lap.cycling <span class="cyan">1.8K</span></td><td>Pso. Las Americas, Guadalupe</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Spin 2U</strong></td><td>@spin.2u</td><td>Contry La Silla, Guadalupe</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Emotion Studio</strong></td><td>--</td><td>Plaza Lemon Park</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Time to Spin</strong></td><td>timetospin.org</td><td>Puerta de Hierro 516, Cumbres</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- YOGA -->
+    <div id="cat-yoga" class="tab-content">
+      <table>
+        <thead><tr><th>Estudio</th><th>IG</th><th>Ubicacion</th><th>W</th><th>TP</th><th>FP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Sadhak Yoga</strong></td><td>@sadhakyoga <span class="cyan">5K</span></td><td>7 sucursales: Centro, Contry, Cumbres, San Jeronimo, Carretera Nal</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Maia Yoga</strong></td><td>@maia_yoga <span class="cyan">3.3K</span></td><td>Rio Aguanaval 2206, Zona Tec</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Mukti Yoga</strong></td><td>@muktiyogamty <span class="cyan">3K</span></td><td>Calzada San Pedro 202, Del Valle</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Surya Yoga</strong></td><td>@suryayogamonterrey <span class="cyan">2.5K</span></td><td>San Pedro</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Taur Vinyasa</strong></td><td>@taur_yoga <span class="cyan">2.5K</span></td><td>1a Avenida 700, Vista Hermosa</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Dosha Yoga</strong></td><td>@doshayogastudio <span class="cyan">2K</span></td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Om Yoga Om</strong></td><td>@omyogaom <span class="cyan">2K</span></td><td>Lazaro Cardenas 1111</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Agara Yoga</strong></td><td>@agarayoga_mty <span class="cyan">2K</span></td><td>Jose Vasconcelos 404</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Bija Santi</strong></td><td>--</td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Shanti Yoga</strong></td><td>--</td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Padma Yoga</strong></td><td>--</td><td>Santa Catarina</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>SukhinO</strong></td><td>@sukhino</td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Pranavah AUM</strong></td><td>--</td><td>Los Cedros</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CROSSFIT/FUNCTIONAL -->
+    <div id="cat-crossfit" class="tab-content">
+      <table>
+        <thead><tr><th>Estudio</th><th>IG</th><th>Ubicacion</th><th>W</th><th>TP</th><th>FP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Funcional 360</strong></td><td>@funcional360hiit <span class="cyan">4.7K</span></td><td>Uptown Cumbres</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Studio Ocho</strong></td><td>@studioocho.mx <span class="cyan">3K</span></td><td>Monterrey (Hot Yoga/Pilates infrarrojo)</td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>CrossFit World</strong></td><td>@crossworld.mty <span class="cyan">2.8K</span></td><td>Washington 1843, Centro</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>CrossFit Xolo</strong></td><td>@crossfitxolo.mx <span class="cyan">2K</span></td><td>Vieja Estanzuela</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Trainiac</strong></td><td>@trainiacmx <span class="cyan">2K</span></td><td>Paseo de los Leones 99, Cumbres</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Motus Fitness</strong></td><td>@motusfitnessstudio <span class="cyan">2K</span></td><td>Diagonal 120, Roma</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Sparta 55</strong></td><td>@sparta55cumbresmty <span class="cyan">1.9K</span></td><td>Cumbres</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>C-One</strong></td><td>@c1.one</td><td>Barragan 400, Periferico</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Lion Fitness</strong></td><td>@lionfitnessmx <span class="cyan">1.6K</span></td><td>Calzada Tenorios 265</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Metcon House</strong></td><td>@metconhouse</td><td>Puerta de Hierro 510 + La Luz</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Boden</strong></td><td>@bodenmx</td><td>Periferico 1604, San Jeronimo</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Fitality</strong></td><td>fitality.mx</td><td>Calzada del Valle 406, San Pedro</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BOXING -->
+    <div id="cat-boxing" class="tab-content">
+      <table>
+        <thead><tr><th>Estudio</th><th>IG</th><th>Ubicacion</th><th>W</th><th>TP</th><th>FP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>JC Chavez Boxing</strong></td><td>@chavezboxingstudio <span class="cyan">5K</span></td><td>Plaza Qin, San Pedro</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>The Boxing Factory</strong></td><td>@theboxingfactorymty <span class="cyan">3K</span></td><td>Lincoln 6269 / Lazaro Cardenas 4400</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Black Box SP</strong></td><td>@blackboxspgg</td><td>Calzada San Pedro 202, Plaza XO</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Black Box Carr. Nal</strong></td><td>--</td><td>Plaza El Vergel</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>The Champs Boxing</strong></td><td>@thechampsboxingclub</td><td>P. del Vergel 100, Carr. Nacional</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Boxing Capital</strong></td><td>@boxingcapital_revolucion <span class="cyan">2K</span></td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Saenz Boxing</strong></td><td>--</td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>9Round MTY</strong></td><td>@9roundmtyva</td><td>Valle Alto</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Contry Kickboxing</strong></td><td>@contrykickboxing</td><td>Contry</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Reoca Training</strong></td><td>@reocatc <span class="cyan">2.2K</span></td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BARRE/DANCE -->
+    <div id="cat-barre" class="tab-content">
+      <table>
+        <thead><tr><th>Estudio</th><th>IG</th><th>Ubicacion</th><th>W</th><th>TP</th><th>FP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Clian Studio</strong></td><td>@clianstudio <span class="cyan">12K</span></td><td>Plaza Amaya</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Dream Army</strong></td><td>@dreamarmy.mx <span class="cyan">8K</span></td><td>San Pedro / Cumbres</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Silhouette Pole</strong></td><td>@silhouettepoledance <span class="cyan">8K</span></td><td>Paseo de los Leones 1123, Cumbres</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Go Power</strong></td><td>@gopower_monterrey <span class="cyan">6.4K</span></td><td>Plaza Paseo 727</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>GEERLS Movement</strong></td><td>@geerls.mx <span class="cyan">5K</span></td><td>Puerta del Sol 526, San Jeronimo</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>BarreFit</strong></td><td>@barrefitt</td><td>Via Cordillera, Valle Poniente</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>The Barre Club</strong></td><td>@barreclubmty</td><td>Puerta de Hierro 1006, Cumbres</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Core Barre</strong></td><td>@corebarrestudio</td><td>Espacio Cumbres</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Khoreo</strong></td><td>@khoreostudio <span class="cyan">1.6K</span></td><td>Lazaro Garza Ayala 105, San Pedro</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Dansstage Pole</strong></td><td>@poledansstage <span class="cyan">3K</span></td><td>Alfonso Reyes 4552, Villa del Rio</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>We Dance Academy</strong></td><td>@wedancemexico <span class="cyan">3.3K</span></td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Euphoria MX</strong></td><td>@euphoriamx_</td><td>Rio Amazonas 311, Del Valle</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- OTHER -->
+    <div id="cat-other" class="tab-content">
+      <table>
+        <thead><tr><th>Estudio</th><th>IG</th><th>Tipo</th><th>Ubicacion</th><th>W</th><th>TP</th><th>FP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Adamanta</strong></td><td>@adamanta_mty</td><td>Climbing / Bouldering</td><td>Plaza Omnia + Gonzalitos</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>DOP&MINA</strong></td><td>@midopamina <span class="cyan">2K</span></td><td>HIIT mujeres</td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Raw Society</strong></td><td>rawsociety.mx <span class="cyan">3K</span></td><td>Dance + Sculpt mujeres</td><td>Vita Plaza, Gomez Morin, San Pedro</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>C-Fit By Sof</strong></td><td>@cfitbysof <span class="cyan">1.5K</span></td><td>Fuerza mujeres</td><td>Monterrey</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td></tr>
+          <tr><td><strong>Active Body MX</strong></td><td>@activebodymx</td><td>Jump + Functional mujeres</td><td>Lazaro Cardenas 1111, Torrebrisas</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>BWell 360</strong></td><td>@bwell360 <span class="cyan">8.2K</span></td><td>EMS + Functional</td><td>3 suc: Valle, San Jeronimo</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Nova Fit EMS</strong></td><td>@novafit.ems</td><td>EMS Training</td><td>San Pedro</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Rooftop Training</strong></td><td>@nutriadn</td><td>Functional + Yoga rooftop</td><td>Puerta del Sol 1204, San Jeronimo</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Fisiovite</strong></td><td>@fisiovite.mx</td><td>Fisioterapia + Rehab</td><td>Plaza Via02, San Jeronimo</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>RM4 Fitness</strong></td><td>@rm4fitness_mty</td><td>Functional + HIIT</td><td>Monterrey</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Hypelab</strong></td><td>@hypelabmx <span class="cyan">5.3K</span></td><td>HIIT + PT premium</td><td>San Pedro</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>One Gym</strong></td><td>--</td><td>Gym completo</td><td>Jose Vasconcelos 266, San Pedro</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>W Fitness Club</strong></td><td>--</td><td>Gym</td><td>Periferico 101</td><td><span class="plat-yes">SI</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Evolve Sports</strong></td><td>@evolvemexico <span class="cyan">2K</span></td><td>Gym + Spinning + Pilates</td><td>La Rioja 245, Residencial La Rioja</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+          <tr><td><strong>Total Sport</strong></td><td>--</td><td>Fitness completo</td><td>Garza Sada 3515, Contry</td><td><span class="plat-no">-</span></td><td><span class="plat-no">-</span></td><td><span class="plat-yes">SI</span></td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="stats-grid" style="margin-top:1.5rem">
       <div class="stat-card" style="border-color:var(--accent)">
         <div class="stat-label">Total estudios mapeados</div>
-        <div class="stat-value accent">49</div>
-        <div class="stat-detail">28 originales + 21 nuevos de Fitpass</div>
+        <div class="stat-value accent">140+</div>
+        <div class="stat-detail">28 originales + 21 Fitpass + 91 catalogo expandido</div>
       </div>
       <div class="stat-card" style="border-color:var(--green)">
-        <div class="stat-label">Fitpass Monterrey total</div>
-        <div class="stat-value green">149</div>
-        <div class="stat-detail">estudios en catalogo completo</div>
+        <div class="stat-label">Estudios boutique relevantes</div>
+        <div class="stat-value green">85+</div>
+        <div class="stat-detail">Cycling, Pilates, Yoga, CrossFit, Boxing, Barre, HIIT, Dance</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Categorias cubiertas</div>
-        <div class="stat-value cyan">12</div>
-        <div class="stat-detail">Cycling, Pilates, Yoga, CrossFit, Boxing, Barre, HIIT, Dance, EMS, Jump, Functional, Gym</div>
+        <div class="stat-value cyan">14</div>
+        <div class="stat-detail">+ EMS, Pole, Climbing, Jump, Dance, Women-only</div>
       </div>
       <div class="stat-card" style="border-color:var(--yellow)">
-        <div class="stat-label">Sin agregador (oportunidad)</div>
-        <div class="stat-value yellow">11</div>
-        <div class="stat-detail">estudios sin Wellhub/TotalPass/Fitpass</div>
+        <div class="stat-label">Pilates es REY</div>
+        <div class="stat-value yellow">35+</div>
+        <div class="stat-detail">estudios de pilates reformer en MTY</div>
       </div>
     </div>
 
     <div class="callout" style="margin-top:1.5rem">
-      <strong>Hallazgos clave de Fitpass:</strong> Siclo (162K), The Body Method (115K) y Powerhouse (63K) son marcas enormes que no teniamos. BoxZen llena el gap de boxing boutique en San Pedro. Anahata Yoga y Hypelab cubren yoga premium y HIIT en zonas donde no teniamos oferta.
+      <strong>Insight:</strong> Monterrey tiene una densidad altisima de pilates reformer (35+ estudios). Cycling es la 2da categoria (15+). Boxing boutique esta creciendo rapido con BoxZen, JC Chavez y Black Box. Pole dance y dance fitness son verticales con 10+ estudios activos — categoria que Wellhub/TotalPass NO cubren bien.
     </div>
 
     <!-- ==================== REVENUE MODEL ==================== -->
@@ -1379,7 +1497,16 @@
       document.getElementById(tabId).classList.add('active');
       const tabs = document.querySelectorAll('.tab');
       const tabMap = { 'tier-a': 0, 'tier-b': 1, 'tier-c': 2 };
-      tabs[tabMap[tabId]].classList.add('active');
+      if (tabMap[tabId] !== undefined) tabs[tabMap[tabId]].classList.add('active');
+    }
+    function switchCat(catId) {
+      const catIds = ['cat-pilates','cat-cycling','cat-yoga','cat-crossfit','cat-boxing','cat-barre','cat-other'];
+      catIds.forEach(id => { const el = document.getElementById(id); if(el) el.classList.remove('active'); });
+      const allTabs = document.querySelectorAll('.tabs');
+      if (allTabs[1]) allTabs[1].querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(catId).classList.add('active');
+      const idx = catIds.indexOf(catId);
+      if (allTabs[1] && idx >= 0) allTabs[1].querySelectorAll('.tab')[idx].classList.add('active');
     }
   </script>
 </body>
